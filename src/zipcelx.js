@@ -20,6 +20,8 @@ export default (config) => {
     throw new Error('Validation failed.');
   }
 
+  console.log('config',config);
+
   const zip = new JSZip();
   const xl = zip.folder('xl');
   xl.file('workbook.xml', workbookXML);
@@ -28,6 +30,7 @@ export default (config) => {
   zip.file('[Content_Types].xml', contentTypes);
 
   const worksheet = generateXMLWorksheet(config.sheet.data);
+  console.log('worksheet', worksheet)
   xl.file('worksheets/sheet1.xml', worksheet);
 
   return zip.generateAsync({
