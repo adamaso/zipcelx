@@ -7,5 +7,7 @@ export default (row, index) => {
   .map((cell, cellIndex) => formatCell(cell, cellIndex, rowIndex))
   .join('');
 
+  console.log('callllled');
+
   return `<row r="${rowIndex}">${rowCells}</row>`;
 };

@@ -8,6 +8,8 @@ export default (cell, index, rowIndex) => {
     cell.type = CELL_TYPE_STRING;
   }
 
+  console.log('callllled');
+
   return (
     cell.type === CELL_TYPE_STRING
     ? generatorStringCell(index, cell.value, rowIndex)
